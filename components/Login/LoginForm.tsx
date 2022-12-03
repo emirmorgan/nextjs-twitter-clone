@@ -3,7 +3,7 @@ import { Formik, Form } from "formik";
 
 import LoginWithApp from "./LoginWithApp";
 import loginSchema from "../../validation/loginSchema";
-import Input from "./Input";
+import Input from "../Input";
 
 interface Props {
   setActive: any;

@@ -31,7 +31,7 @@ const LoginContent = () => {
           {isLoginActive ? (
             <LoginForm setActive={setLoginActive} />
           ) : (
-            <RegisterForm />
+            <RegisterForm setActive={setLoginActive} />
           )}
         </div>
       </div>

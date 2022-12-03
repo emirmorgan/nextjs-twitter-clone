@@ -1,5 +1,5 @@
 import { useField } from "formik";
-import React, { useState } from "react";
+import React from "react";
 
 interface InputProps {
   label: string;
@@ -32,7 +32,7 @@ const Input: React.FC<InputProps> = (props) => {
       </span>
       <input
         type="text"
-        className="w-full focus:outline-none pt-3 pb-1"
+        className="w-full focus:outline-none pt-3 pb-1 autofill:bg-transparent"
         {...field}
         {...props}
       />
