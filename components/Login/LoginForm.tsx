@@ -4,6 +4,7 @@ import { Formik, Form } from "formik";
 import LoginWithApp from "./LoginWithApp";
 import loginSchema from "../../validation/loginSchema";
 import Input from "../Input";
+import { userLogin } from "../../firebase";
 
 interface Props {
   setActive: any;
@@ -29,10 +30,11 @@ const LoginForm: React.FC<Props> = ({ setActive }) => {
       <Formik
         initialValues={initalValues}
         validationSchema={loginSchema}
-        onSubmit={(values, actions) => {
-          console.log({ values, actions });
-          alert(JSON.stringify(values, null, 2));
-          actions.setSubmitting(false);
+        onSubmit={async (values, actions) => {
+          const email = values.email;
+          const password = values.password;
+
+          await userLogin(email, password);
         }}
       >
         {(formControl) => (

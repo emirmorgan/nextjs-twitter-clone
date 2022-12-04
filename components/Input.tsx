@@ -31,7 +31,7 @@ const Input: React.FC<InputProps> = (props) => {
         {label}
       </span>
       <input
-        type="text"
+        type={field.name === "password" ? "password" : "text"}
         className="w-full focus:outline-none pt-3 pb-1 autofill:bg-transparent"
         {...field}
         {...props}
