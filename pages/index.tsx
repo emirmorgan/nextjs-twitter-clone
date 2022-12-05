@@ -1,5 +1,9 @@
+import { getAuth } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+
 import Head from "next/head";
 import Login from "../components/Login/Index";
+import { useRouter } from "next/router";
 
 interface SeoType {
   title: string;
@@ -12,6 +16,19 @@ const SeoProps: SeoType = {
 };
 
 export default function Home() {
+  const auth = getAuth();
+  const router = useRouter();
+
+  const [user, loading] = useAuthState(auth);
+
+  if (loading) {
+    return <div>Loading screen</div>;
+  }
+
+  if (user) {
+    router.push("/home");
+  }
+
   return (
     <>
       <Head>
