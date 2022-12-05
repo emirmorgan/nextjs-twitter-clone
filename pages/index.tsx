@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import Head from "next/head";
 import Login from "../components/Login/Index";
 import { useRouter } from "next/router";
+import LoadingScreen from "../components/LoadingScreen";
 
 interface SeoType {
   title: string;
@@ -22,7 +23,7 @@ export default function Home() {
   const [user, loading] = useAuthState(auth);
 
   if (loading) {
-    return <div>Loading screen</div>;
+    return <LoadingScreen />;
   }
 
   if (user) {

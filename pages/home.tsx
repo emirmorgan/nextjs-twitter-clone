@@ -1,7 +1,10 @@
-import { getAuth } from "firebase/auth";
 import { useRouter } from "next/router";
+import { getAuth } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
+
 import { userLogout } from "../firebase";
+
+import LoadingScreen from "../components/LoadingScreen";
 
 const Home = () => {
   const auth = getAuth();
@@ -10,12 +13,12 @@ const Home = () => {
   const [user, loading] = useAuthState(auth);
 
   if (loading) {
-    return <div>Loading screen</div>;
+    return <LoadingScreen />;
   }
 
   if (!user) {
     router.push("/");
-    return <div>Loading screen</div>;
+    return <LoadingScreen />;
   }
 
   return (

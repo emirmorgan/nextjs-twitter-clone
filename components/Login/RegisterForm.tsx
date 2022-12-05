@@ -59,6 +59,21 @@ const RegisterForm: React.FC<Props> = ({ setActive }) => {
           </Form>
         )}
       </Formik>
+      <p className="text-center mt-2 text-sm text-gray-700 font-semibold">
+        By signing up, you agree to the{" "}
+        <a href="" className="!text-blue-600 hover:underline">
+          Terms of Service
+        </a>{" "}
+        and{" "}
+        <a href="" className="!text-blue-600 hover:underline">
+          Privacy Policy
+        </a>
+        , including{" "}
+        <a href="" className="!text-blue-600 hover:underline">
+          Cookie Use
+        </a>
+        .
+      </p>
       <p className="flex items-center justify-center gap-1 mt-2">
         Already have an account?
         <span

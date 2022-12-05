@@ -7,7 +7,10 @@ const LoginWithApp = () => {
         <div className="h-[1px] w-full bg-gray-300" />
       </div>
       <div className="flex flex-col gap-3 w-full">
-        <button className="font-chirp font-semibold rounded-full border border-gray-400 hover:bg-gray-200 p-2">
+        <button
+          className="font-chirp font-semibold rounded-full border border-gray-400 disabled:cursor-not-allowed p-2"
+          disabled
+        >
           <div className="flex justify-center gap-2">
             <svg
               className="h-6 w-6"
@@ -38,7 +41,10 @@ const LoginWithApp = () => {
             <span>Sign in with Google</span>
           </div>
         </button>
-        <button className="font-chirp font-semibold rounded-full border border-gray-400 hover:bg-gray-200 p-2">
+        <button
+          className="font-chirp font-semibold rounded-full border border-gray-400 disabled:cursor-not-allowed p-2"
+          disabled
+        >
           <div className="flex justify-center gap-2">
             <svg className="h-6 w-6" viewBox="0 0 24 24">
               <g>
@@ -49,21 +55,6 @@ const LoginWithApp = () => {
           </div>
         </button>
       </div>
-      <p className="text-center mt-2 text-sm text-gray-700 font-semibold">
-        By signing up, you agree to the{" "}
-        <a href="" className="!text-blue-600 hover:underline">
-          Terms of Service
-        </a>{" "}
-        and{" "}
-        <a href="" className="!text-blue-600 hover:underline">
-          Privacy Policy
-        </a>
-        , including{" "}
-        <a href="" className="!text-blue-600 hover:underline">
-          Cookie Use
-        </a>
-        .
-      </p>
     </div>
   );
 };
