@@ -5,6 +5,7 @@ import Head from "next/head";
 import Login from "../components/Login/Index";
 import { useRouter } from "next/router";
 import LoadingScreen from "../components/LoadingScreen";
+import { auth } from "../firebase";
 
 interface SeoType {
   title: string;
@@ -17,7 +18,6 @@ const SeoProps: SeoType = {
 };
 
 export default function Home() {
-  const auth = getAuth();
   const router = useRouter();
 
   const [user, loading] = useAuthState(auth);
@@ -28,6 +28,7 @@ export default function Home() {
 
   if (user) {
     router.push("/home");
+    return <LoadingScreen />;
   }
 
   return (
