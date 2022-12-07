@@ -1,16 +1,13 @@
 import Link from "next/link";
-
-import { SidebarItems } from "../data/helpers";
-
-import { Icons } from "../assets/Icons";
-
 import { useRouter } from "next/router";
-import Image from "next/image";
-import { useAppSelector } from "../utils/hooks";
+
+import { Icons } from "../../assets/Icons";
+import { SidebarItems } from "../../data/helpers";
+
+import SidebarProfile from "./SidebarProfile";
 
 const Sidebar = () => {
   const router = useRouter();
-  const currentUser: any = useAppSelector((state) => state.user.user);
 
   return (
     <header className="flex flex-col grow shrink-0 basis-auto items-end">
@@ -53,29 +50,7 @@ const Sidebar = () => {
           </div>
           <span className="hidden xl:block">Tweet</span>
         </div>
-        <div className="my-3 w-full mt-auto hover:bg-gray-200 rounded-full cursor-pointer">
-          <div className="flex justify-center items-center p-2">
-            <div className="max-w-[40px] max-h-[40px] min-w-[40px] min-h-[40px] relative rounded-full">
-              <Image
-                src={currentUser?.photoSrc}
-                fill
-                alt="Profile picture"
-                className="rounded-full"
-              />
-            </div>
-            <div className="hidden xl:flex flex-col mx-3 min-h-[40px]">
-              <span className="text-black font-semibold text-[15px]">
-                {currentUser?.displayName}
-              </span>
-              <span className="text-gray-400 text-[15px]">
-                {"@" + currentUser?.username}
-              </span>
-            </div>
-            <div className="hidden xl:flex justify-end flex-1">
-              <Icons name="burgerMore" />
-            </div>
-          </div>
-        </div>
+        <SidebarProfile />
       </div>
     </header>
   );
