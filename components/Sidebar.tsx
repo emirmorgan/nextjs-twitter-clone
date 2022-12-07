@@ -63,7 +63,7 @@ const Sidebar = () => {
                 className="rounded-full"
               />
             </div>
-            <div className="flex flex-col mx-3 min-h-[40px]">
+            <div className="hidden xl:flex flex-col mx-3 min-h-[40px]">
               <span className="text-black font-semibold text-[15px]">
                 {currentUser?.displayName}
               </span>
@@ -71,7 +71,7 @@ const Sidebar = () => {
                 {"@" + currentUser?.username}
               </span>
             </div>
-            <div className="flex justify-end flex-1">
+            <div className="hidden xl:flex justify-end flex-1">
               <Icons name="burgerMore" />
             </div>
           </div>
