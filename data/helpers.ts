@@ -33,9 +33,5 @@ export const SidebarItems: Array<SidebarItem> = [
     name: "Profile",
     href: "profile",
   },
-  {
-    name: "More",
-    href: "more",
-  },
 ];
 //#endregion
