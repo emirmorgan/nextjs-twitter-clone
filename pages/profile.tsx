@@ -1,4 +1,5 @@
 import Head from "next/head";
+import ListContent from "../components/ListContent";
 
 const Profile = () => {
   return (
@@ -10,7 +11,7 @@ const Profile = () => {
         <span>Profile</span>
       </div>
       <div className="hidden lg:flex flex-col w-[350px] mr-[10px]">
-        <span>Profile</span>
+        <ListContent />
       </div>
     </>
   );

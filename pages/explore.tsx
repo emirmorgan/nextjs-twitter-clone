@@ -1,4 +1,5 @@
 import Head from "next/head";
+import ListContent from "../components/ListContent";
 
 const Explore = () => {
   return (
@@ -10,7 +11,7 @@ const Explore = () => {
         <span>Explore</span>
       </div>
       <div className="hidden lg:flex flex-col w-[350px] mr-[10px]">
-        <span>Explore</span>
+        <ListContent />
       </div>
     </>
   );

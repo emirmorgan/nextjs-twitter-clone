@@ -1,4 +1,5 @@
 import Head from "next/head";
+import ListContent from "../components/ListContent";
 
 const Notifications = () => {
   return (
@@ -10,7 +11,7 @@ const Notifications = () => {
         <span>Notifications</span>
       </div>
       <div className="hidden lg:flex flex-col w-[350px] mr-[10px]">
-        <span>Notifications</span>
+        <ListContent />
       </div>
     </>
   );

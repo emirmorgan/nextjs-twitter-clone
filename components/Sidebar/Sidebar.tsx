@@ -1,40 +1,18 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 import { Icons } from "../../assets/Icons";
 import { SidebarItems } from "../../data/helpers";
-import { userLogout } from "../../firebase";
+
+import SidebarDropdown from "./SidebarDropdown";
 
 import SidebarProfile from "./SidebarProfile";
 
 const Sidebar = () => {
   const router = useRouter();
-  const menuRef = useRef<HTMLInputElement | null>(null);
 
   const [menuVisible, setMenuVisible] = useState(false);
-
-  const handleSignout = (e: any) => {
-    e.preventDefault();
-    userLogout();
-  };
-
-  useEffect(() => {
-    const toggleMenu = (e: any) => {
-      if (
-        menuRef.current &&
-        menuVisible &&
-        !menuRef.current.contains(e.target)
-      ) {
-        setMenuVisible(false);
-      }
-    };
-
-    document.addEventListener("mousedown", toggleMenu);
-    return () => {
-      document.removeEventListener("mousedown", toggleMenu);
-    };
-  }, [menuRef, menuVisible]);
 
   return (
     <header className="flex flex-col grow shrink-0 basis-auto items-end">
@@ -96,37 +74,12 @@ const Sidebar = () => {
               </div>
             </div>
           </div>
-          <div
-            ref={menuRef}
-            className={
-              "absolute bottom-0 w-64 bg-white border rounded-xl shadow-xl divide-y divide-gray-100" +
-              (menuVisible ? " block" : " hidden")
-            }
-          >
-            <ul className="py-1 text-sm text-black">
-              <li className="flex items-center px-4 cursor-pointer hover:bg-gray-100">
-                <div className="min-w-[24px] max-w-[24px]">
-                  <Icons name="topics" />
-                </div>
-                <span className="block py-2 px-4 text-lg font-semibold ">
-                  Dashboard
-                </span>
-              </li>
-              <li className="flex items-center px-4 cursor-pointer hover:bg-gray-100">
-                <div className="min-w-[24px] max-w-[24px]">
-                  <Icons name="circle" />
-                </div>
-                <span className="block py-2 px-4 text-lg font-semibold ">
-                  Settings
-                </span>
-              </li>
-            </ul>
-            <div className="py-1" onClick={handleSignout}>
-              <span className="block py-2 px-4 text-lg font-semibold text-black hover:bg-gray-100 cursor-pointer">
-                Sign out
-              </span>
-            </div>
-          </div>
+          {menuVisible ? (
+            <SidebarDropdown
+              menuVisible={menuVisible}
+              setMenuVisible={setMenuVisible}
+            />
+          ) : null}
         </div>
         <div className="flex justify-center items-center min-h-[52px] min-w-[52px] w-[52px] xl:w-[90%] text-white font-bold bg-twitter rounded-full xl:px-8 mt-2 mb-1 cursor-pointer hover:bg-sky-600 transition-all ease-linear">
           <div className="flex xl:hidden items-center justify-center min-w-[52px] min-h-[52px]">

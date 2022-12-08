@@ -1,4 +1,5 @@
 import Head from "next/head";
+import ListContent from "../components/ListContent";
 
 const Messages = () => {
   return (
@@ -10,7 +11,7 @@ const Messages = () => {
         <span>Messages</span>
       </div>
       <div className="hidden lg:flex flex-col w-[350px] mr-[10px]">
-        <span>Messages</span>
+        <ListContent />
       </div>
     </>
   );

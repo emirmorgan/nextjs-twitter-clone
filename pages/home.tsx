@@ -11,6 +11,7 @@ import LoadingScreen from "../components/LoadingScreen";
 
 //Utils
 import { useAppSelector } from "../utils/hooks";
+import ListContent from "../components/ListContent";
 
 const Home = () => {
   const router = useRouter();
@@ -42,7 +43,7 @@ const Home = () => {
         <span>Homepage</span>
       </div>
       <div className="hidden lg:flex flex-col w-[350px] mr-[10px]">
-        <span>Homepage</span>
+        <ListContent />
       </div>
     </>
   );
