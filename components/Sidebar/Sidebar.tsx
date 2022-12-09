@@ -15,8 +15,8 @@ const Sidebar = () => {
   const [menuVisible, setMenuVisible] = useState(false);
 
   return (
-    <header className="flex flex-col grow shrink-0 basis-auto items-end">
-      <div className="flex flex-col items-center xl:items-start min-w-[68px] sm:w-[88px] xl:w-[275px] h-full px-3">
+    <header className="flex flex-col grow shrink-0 basis-auto items-end ml-[76px] sm:ml-[88px] xl:ml-[275px]">
+      <div className="fixed flex flex-col items-center xl:items-start min-w-[68px] sm:w-[88px] xl:w-[275px] h-full px-3">
         <Link href="/home" className="group">
           <div className="flex items-center justify-center xl:justify-start p-3 group-hover:bg-twitter group-hover:bg-opacity-10 rounded-full transition-all ease-linear">
             <div className="text-twitter min-w-[28px] min-h-[28px]">
