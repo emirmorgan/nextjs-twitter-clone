@@ -13,7 +13,7 @@ const Bookmarks = () => {
       </Head>
       <div className="w-full h-full min-h-screen max-w-[600px] border-x">
         <div className="flex flex-col">
-          <div className="flex items-center justify-between px-3 pt-2">
+          <div className="flex items-center justify-between px-4 pt-3">
             <div className="flex flex-col">
               <span className="font-bold text-xl">Bookmarks</span>
               <span className="text-gray-500 text-sm">

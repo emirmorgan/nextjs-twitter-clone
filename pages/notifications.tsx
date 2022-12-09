@@ -11,7 +11,7 @@ const Notifications = () => {
       </Head>
       <div className="w-full h-full min-h-screen max-w-[600px] border-x">
         <div className="flex flex-col">
-          <div className="flex items-center justify-between px-3">
+          <div className="flex items-center justify-between px-1">
             <span className="font-bold text-xl p-3">Notifications</span>
             <div className="min-w-[38px] min-h-[38px] ml-3 p-2 hover:bg-gray-100 rounded-full cursor-pointer">
               <Icons name="settings" />
