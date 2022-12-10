@@ -4,15 +4,22 @@ import { useState } from "react";
 
 import { Icons } from "../../assets/Icons";
 import { SidebarItems } from "../../data/helpers";
+import { useAppSelector } from "../../utils/hooks";
 
 import SidebarDropdown from "./SidebarDropdown";
-
 import SidebarProfile from "./SidebarProfile";
 
 const Sidebar = () => {
   const router = useRouter();
 
   const [menuVisible, setMenuVisible] = useState(false);
+  const currentUser: any = useAppSelector((state) => state.user.user);
+
+  if (!currentUser) {
+    return (
+      <header className="flex flex-col grow shrink-0 basis-auto items-end ml-[76px] sm:ml-[88px] xl:ml-[275px]"></header>
+    );
+  }
 
   return (
     <header className="flex flex-col grow shrink-0 basis-auto items-end ml-[76px] sm:ml-[88px] xl:ml-[275px]">
@@ -25,7 +32,11 @@ const Sidebar = () => {
           </div>
         </Link>
         {SidebarItems.map((item, id) => (
-          <Link href={item.href} key={id} className="w-full">
+          <Link
+            href={item.href === "profile" ? currentUser?.username : item.href}
+            key={id}
+            className="w-full"
+          >
             <div className="flex flex-col items-center xl:items-start group">
               <div className="flex max-w-max p-3 group-hover:bg-black group-hover:bg-opacity-10 rounded-full">
                 <div className="min-w-[28px] min-h-[28px]">
