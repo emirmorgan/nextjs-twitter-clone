@@ -8,7 +8,10 @@ const Tweets = () => {
   return (
     <div className="flex flex-col">
       {currentUser?.tweets.map((item: any, id: number) => (
-        <div key={id} className="flex flex-col hover:bg-gray-100 px-4 py-3">
+        <div
+          key={id}
+          className="flex flex-col hover:bg-gray-100 border-b px-4 py-3"
+        >
           <div className="flex">
             <div className="max-w-[48px] max-h-[48px] min-w-[48px] min-h-[48px] relative rounded-full">
               <Image
@@ -35,8 +38,40 @@ const Tweets = () => {
                   <Icons name="burgerMore" />
                 </div>
               </div>
-              <p className=" break-words">{item.tweet}</p>
-              <div className="flex"></div>
+              <p className="break-words">{item.tweet}</p>
+              <div className="flex max-w-[420px] justify-between text-gray-600 mt-3">
+                <div className="flex items-center gap-1 group hover:text-twitter cursor-pointer">
+                  <div className="p-2 rounded-full group-hover:bg-twitter group-hover:bg-opacity-10 transition-all ease-in-out">
+                    <div className="min-w-[1.25em] min-h-[1.25em]">
+                      <Icons name="comment" />
+                    </div>
+                  </div>
+                  <span className="text-sm">{item.comments}</span>
+                </div>
+                <div className="flex items-center gap-1 group hover:text-green-500 cursor-pointer">
+                  <div className="p-2 rounded-full group-hover:bg-green-400 group-hover:bg-opacity-10 transition-all ease-in-out">
+                    <div className="min-w-[1.25em] min-h-[1.25em]">
+                      <Icons name="retweet" />
+                    </div>
+                  </div>
+                  <span className="text-sm">{item.retweets}</span>
+                </div>
+                <div className="flex items-center gap-1 group hover:text-red-500 cursor-pointer">
+                  <div className="p-2 rounded-full group-hover:bg-red-500 group-hover:bg-opacity-10 transition-all ease-in-out">
+                    <div className="min-w-[1.25em] min-h-[1.25em]">
+                      <Icons name="like" />
+                    </div>
+                  </div>
+                  <span className="text-sm">{item.likes}</span>
+                </div>
+                <div className="flex items-center gap-1 cursor-pointer">
+                  <div className="p-2 rounded-full hover:bg-twitter hover:text-twitter hover:bg-opacity-10 transition-all ease-in-out">
+                    <div className="min-w-[1.25em] min-h-[1.25em]">
+                      <Icons name="share" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

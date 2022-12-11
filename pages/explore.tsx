@@ -70,7 +70,7 @@ const Explore = () => {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col border-t px-4 py-3">
+        <div className="flex flex-col border-t px-4 py-3 relative z-[-1]">
           <span className="font-bold text-xl pb-3">What&apos;s happening</span>
           <div className="flex items-center gap-12 space-y-8 animate-pulse">
             <div className="w-full">
