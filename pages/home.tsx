@@ -45,7 +45,9 @@ const Home = () => {
             <Icons name="latest" />
           </div>
         </div>
-        <SendTweet />
+        <div className="border-b">
+          <SendTweet />
+        </div>
         <Tweets />
       </div>
       <div className="hidden lg:flex flex-col w-[350px] mr-[10px]">

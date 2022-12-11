@@ -29,7 +29,7 @@ const SendTweet = () => {
   };
 
   return (
-    <div className="flex flex-col mt-3 border-b p-4 pt-2">
+    <div className="flex flex-col mt-3 p-4 pt-2">
       <div className="flex">
         <div className="max-w-[48px] max-h-[48px] min-w-[48px] min-h-[48px] relative rounded-full">
           <Image

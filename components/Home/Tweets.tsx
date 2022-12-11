@@ -13,10 +13,12 @@ const Tweets = () => {
           className="flex flex-col hover:bg-gray-100 border-b px-4 py-3"
         >
           <div className="flex">
-            <div className="max-w-[48px] max-h-[48px] min-w-[48px] min-h-[48px] relative rounded-full">
+            <div className="max-w-[48px] max-h-[48px] min-w-[48px] min-h-[48px] rounded-full">
               <Image
-                className="rounded-full"
-                fill
+                className="rounded-full w-full h-auto"
+                width="0"
+                height="0"
+                sizes="100vw"
                 src={currentUser?.photoSrc}
                 alt="Profile Photo"
               />
