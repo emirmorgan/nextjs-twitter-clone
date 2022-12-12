@@ -19,11 +19,11 @@ const TwitterModal: React.FC<LayoutProps> = ({
       onClick={(e) =>
         !modalRef.current.contains(e.target) ? setModalVisible(false) : null
       }
-      className="absolute flex justify-center w-full h-full z-50 bg-black bg-opacity-40"
+      className="absolute left-0 top-0 flex justify-center w-full h-full z-50 bg-black bg-opacity-40"
     >
       <div
         ref={modalRef}
-        className="flex flex-col w-11/12 sm:w-5/6 lg:w-4/6 h-fit bg-white rounded-xl mt-12"
+        className="flex flex-col w-11/12 sm:w-5/6 lg:w-4/6 xl:w-3/6 h-fit bg-white rounded-xl mt-12"
       >
         <div className="flex items-center p-3">
           <div className="min-w-[56px]">
@@ -36,7 +36,7 @@ const TwitterModal: React.FC<LayoutProps> = ({
               </div>
             </div>
           </div>
-          <span className="font-bold">{title}</span>
+          <span className="font-bold text-xl">{title}</span>
         </div>
         <div className="flex flex-col px-3">{children}</div>
       </div>

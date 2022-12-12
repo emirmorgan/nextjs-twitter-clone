@@ -1,15 +1,22 @@
+import { useState } from "react";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import Image from "next/image";
-import { useRouter } from "next/router";
+
+import { useAppSelector } from "../utils/hooks";
+
+//Components
 import Tweets from "../components/Home/Tweets";
 import ListContent from "../components/ListContent";
 import DoesntExist from "../components/Profile/DoesntExist";
-import { useAppSelector } from "../utils/hooks";
+import EditProfile from "../components/Profile/EditProfile";
+import TwitterModal from "../components/TwitterModal";
 
 const Profile = () => {
   const router = useRouter();
-  const currentUser: any = useAppSelector((state) => state.user.user);
 
+  const [isModalVisible, setModalVisible] = useState(false);
+  const currentUser: any = useAppSelector((state) => state.user.user);
   const { username } = router.query;
 
   if (!currentUser) {
@@ -48,7 +55,10 @@ const Profile = () => {
                 />
               </div>
               <div className="ml-auto mt-3">
-                <button className="font-semibold border border-gray-300 rounded-full px-3 py-1.5 hover:bg-gray-200 transition-all ease-in-out">
+                <button
+                  onClick={() => setModalVisible(true)}
+                  className="font-semibold border border-gray-300 rounded-full px-3 py-1.5 hover:bg-gray-200 transition-all ease-in-out"
+                >
                   Edit profile
                 </button>
               </div>
@@ -61,6 +71,7 @@ const Profile = () => {
                 <span className="text-sm text-gray-600">
                   {"@" + currentUser.username}
                 </span>
+                <p className="mt-2">{currentUser.bio}</p>
               </div>
               <div className="flex items-center gap-4">
                 <span className="text-sm text-gray-600">
@@ -101,6 +112,11 @@ const Profile = () => {
       <div className="hidden lg:flex flex-col w-[350px] mr-[10px]">
         <ListContent />
       </div>
+      {isModalVisible ? (
+        <TwitterModal title="Edit Profile" setModalVisible={setModalVisible}>
+          <EditProfile />
+        </TwitterModal>
+      ) : null}
     </>
   );
 };
