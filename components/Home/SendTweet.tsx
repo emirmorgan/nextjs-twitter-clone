@@ -2,16 +2,25 @@ import { useState } from "react";
 import Image from "next/image";
 
 import { Icons } from "../../assets/Icons";
-import { useAppSelector } from "../../utils/hooks";
+import { useAppDispatch, useAppSelector } from "../../utils/hooks";
+import { sendTweet } from "../../firebase";
+import { addTweet } from "../../redux/userSlice";
 
 const SendTweet = () => {
+  const dispatch = useAppDispatch();
   const [tweet, setTweet] = useState("");
   const [isEmpty, setEmpty] = useState(true);
   const currentUser: any = useAppSelector((state) => state.user.user);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log("Submited.");
+
+    const comments = Math.floor(Math.random() * 1000);
+    const retweets = Math.floor(Math.random() * 1000);
+    const likes = Math.floor(Math.random() * 1000);
+
+    sendTweet(currentUser, tweet, comments, retweets, likes);
+    dispatch(addTweet({ tweet, comments, retweets, likes }));
 
     //Reset after submit
     setTweet("");

@@ -8,6 +8,7 @@ import {
   signOut,
 } from "firebase/auth";
 import {
+  arrayUnion,
   collection,
   doc,
   getDoc,
@@ -15,6 +16,7 @@ import {
   getFirestore,
   query,
   setDoc,
+  updateDoc,
   where,
 } from "firebase/firestore";
 import { setTheUser } from "./utils/setUser";
@@ -115,4 +117,17 @@ export const userLogout = async () => {
   } catch (error) {
     alert("Error: " + error);
   }
+};
+
+export const sendTweet = async (user, tweet, comments, retweets, likes) => {
+  const userDocRef = doc(db, "users", user.uid);
+
+  await updateDoc(userDocRef, {
+    tweets: arrayUnion({
+      tweet: tweet,
+      comments: comments,
+      retweets: retweets,
+      likes: likes,
+    }),
+  });
 };

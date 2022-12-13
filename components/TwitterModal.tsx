@@ -19,7 +19,7 @@ const TwitterModal: React.FC<LayoutProps> = ({
       onClick={(e) =>
         !modalRef.current.contains(e.target) ? setModalVisible(false) : null
       }
-      className="absolute left-0 top-0 flex justify-center w-full h-full z-50 bg-black bg-opacity-40"
+      className="fixed left-0 top-0 flex justify-center w-full h-full z-50 bg-black bg-opacity-40"
     >
       <div
         ref={modalRef}
