@@ -131,3 +131,13 @@ export const sendTweet = async (user, tweet, comments, retweets, likes) => {
     }),
   });
 };
+
+export const editProfile = async (user, source, name, bio) => {
+  const userDocRef = doc(db, "users", user.uid);
+
+  await updateDoc(userDocRef, {
+    photoSrc: source,
+    displayName: name,
+    bio: bio,
+  });
+};

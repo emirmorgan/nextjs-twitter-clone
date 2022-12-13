@@ -114,7 +114,7 @@ const Profile = () => {
       </div>
       {isModalVisible ? (
         <TwitterModal title="Edit Profile" setModalVisible={setModalVisible}>
-          <EditProfile />
+          <EditProfile setModalVisible={setModalVisible} />
         </TwitterModal>
       ) : null}
     </>

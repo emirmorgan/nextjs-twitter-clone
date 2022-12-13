@@ -18,7 +18,7 @@ const Tweets = () => {
             <div className="flex">
               <div className="max-w-[48px] max-h-[48px] min-w-[48px] min-h-[48px] rounded-full">
                 <Image
-                  className="rounded-full w-full h-auto"
+                  className="rounded-full w-full h-full object-cover"
                   width="0"
                   height="0"
                   sizes="100vw"

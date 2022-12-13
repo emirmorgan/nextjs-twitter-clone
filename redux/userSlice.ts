@@ -10,6 +10,21 @@ export const userSlice = createSlice({
     setUser: (state, action) => {
       state.user = action.payload;
     },
+    updateProfile: (
+      state: any,
+      action: PayloadAction<{
+        photoSrc: string;
+        displayName: string;
+        bio: string;
+      }>
+    ) => {
+      state.user = {
+        ...state.user,
+        photoSrc: action.payload.photoSrc,
+        displayName: action.payload.displayName,
+        bio: action.payload.bio,
+      };
+    },
     addTweet: (
       state: any,
       action: PayloadAction<{
@@ -34,5 +49,5 @@ export const userSlice = createSlice({
   },
 });
 
-export const { setUser, addTweet } = userSlice.actions;
+export const { setUser, addTweet, updateProfile } = userSlice.actions;
 export default userSlice.reducer;
