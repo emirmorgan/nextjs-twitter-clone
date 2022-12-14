@@ -1,3 +1,14 @@
+# Technologies
+
+- NextJS
+- Typescript
+- Firebase / Firestore & Auth
+- TailwindCSS
+- Redux / redux-toolkit
+- Formik / Yup
+
+### Live: nextjs-twitter.netlify.app / Example account -> E-mail: test@test.com - Password: 123456
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

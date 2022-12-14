@@ -3,6 +3,7 @@ import Input from "../Input";
 import registerSchema from "../../validation/registerSchema";
 
 import { userRegistration } from "../../firebase.js";
+import { useRouter } from "next/router";
 
 interface initialTypes {
   email: string;
@@ -15,6 +16,8 @@ interface Props {
 }
 
 const RegisterForm: React.FC<Props> = ({ setActive }) => {
+  const router = useRouter();
+
   const initalValues: initialTypes = {
     email: "",
     password: "",
@@ -36,6 +39,8 @@ const RegisterForm: React.FC<Props> = ({ setActive }) => {
           const username = values.username;
 
           await userRegistration(email, username, password);
+
+          router.push("/");
         }}
       >
         {(formControl) => (
