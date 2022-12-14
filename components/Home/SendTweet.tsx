@@ -6,8 +6,9 @@ import { useAppDispatch, useAppSelector } from "../../utils/hooks";
 import { sendTweet } from "../../firebase";
 import { addTweet } from "../../redux/userSlice";
 
-const SendTweet = () => {
+const SendTweet = ({ setModalVisible }: any) => {
   const dispatch = useAppDispatch();
+
   const [tweet, setTweet] = useState("");
   const [isEmpty, setEmpty] = useState(true);
   const currentUser: any = useAppSelector((state) => state.user.user);
@@ -25,6 +26,7 @@ const SendTweet = () => {
     //Reset after submit
     setTweet("");
     setEmpty(true);
+    setModalVisible(false);
   };
 
   const handleChange = (e: any) => {

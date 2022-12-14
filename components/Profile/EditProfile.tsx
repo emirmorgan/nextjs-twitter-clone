@@ -75,6 +75,7 @@ const EditProfile = ({ setModalVisible }: any) => {
             onChange={(e) => setName(e.target.value)}
             type="text"
             name="name"
+            maxLength={32}
           />
         </div>
         <div className="flex flex-col rounded border p-1 border-gray-400 focus-within:border-twitter">
@@ -86,6 +87,7 @@ const EditProfile = ({ setModalVisible }: any) => {
             onChange={(e) => setBio(e.target.value)}
             type="text"
             name="bio"
+            maxLength={48}
           />
         </div>
         <button

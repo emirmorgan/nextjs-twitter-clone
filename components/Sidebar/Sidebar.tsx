@@ -111,7 +111,7 @@ const Sidebar = () => {
       </header>
       {isModalVisible ? (
         <TwitterModal title="" setModalVisible={setModalVisible}>
-          <SendTweet />
+          <SendTweet setModalVisible={setModalVisible} />
         </TwitterModal>
       ) : null}
     </>

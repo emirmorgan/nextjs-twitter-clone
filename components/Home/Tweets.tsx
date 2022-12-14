@@ -27,13 +27,13 @@ const Tweets = () => {
                 />
               </div>
               <div className="flex-col items-center w-full ml-2">
-                <div className="flex items-center">
-                  <Link href="/profile">
+                <div className="flex items-center break-words text-ellipsis whitespace-normal">
+                  <Link href={currentUser.username}>
                     <span className="text-lg font-semibold hover:underline">
                       {currentUser?.displayName}
                     </span>
                   </Link>
-                  <Link href="/profile">
+                  <Link href={currentUser.username}>
                     <span className="text-gray-500 text-sm ml-1">
                       {"@" + currentUser?.username}
                     </span>
