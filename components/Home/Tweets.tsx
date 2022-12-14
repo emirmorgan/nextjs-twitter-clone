@@ -5,6 +5,11 @@ import { useAppSelector } from "../../utils/hooks";
 
 const Tweets = () => {
   const currentUser: any = useAppSelector((state) => state.user.user);
+
+  if (!currentUser) {
+    return <></>;
+  }
+
   return (
     <div className="flex flex-col">
       {currentUser?.tweets
