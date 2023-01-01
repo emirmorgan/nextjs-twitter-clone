@@ -1,3 +1,6 @@
+## Live: https://nextjs-twitter.netlify.app
++ Test Account: test@test.com / 123456
+
 # Technologies
 
 - NextJS
@@ -7,7 +10,13 @@
 - Redux / redux-toolkit
 - Formik / Yup
 
-### Live: nextjs-twitter.netlify.app / Example account -> E-mail: test@test.com - Password: 123456
+## Previews
+
+![twt-1](https://user-images.githubusercontent.com/53477261/210177068-c483bf2f-aea1-4801-8593-009d39ea55ce.PNG)
+![twt-2](https://user-images.githubusercontent.com/53477261/210177081-9c8401ac-de1c-4788-82fc-5aa17bafddae.PNG)
+![twt-3](https://user-images.githubusercontent.com/53477261/210177082-24ea0a0d-17f5-4280-a501-479a96e771f7.PNG)
+
+---------------------------------------------
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
