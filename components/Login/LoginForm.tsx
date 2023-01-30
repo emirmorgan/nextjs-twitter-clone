@@ -39,9 +39,10 @@ const LoginForm: React.FC<Props> = ({ setActive }) => {
       >
         {(formControl) => (
           <Form className="flex flex-col gap-3">
-            <Input label="Email" name="email" />
-            <Input label="Password" name="password" />
+            <Input data-cy="email" label="Email" name="email" />
+            <Input data-cy="password" label="Password" name="password" />
             <button
+              data-cy="login"
               type="submit"
               className="text-white bg-twitter rounded-full p-2 hover:bg-opacity-90 disabled:opacity-30"
               disabled={
@@ -55,6 +56,7 @@ const LoginForm: React.FC<Props> = ({ setActive }) => {
               Log in
             </button>
             <button
+              data-cy="signup"
               onClick={handleSignup}
               className="text-twitter border border-twitter bg-white rounded-full p-2 hover:bg-twitter hover:bg-opacity-10"
             >
